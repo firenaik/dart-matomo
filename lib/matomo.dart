@@ -251,14 +251,15 @@ class MatomoTracker {
     ));
   }
 
-  static void trackEvent(String eventName, String eventAction,
-      {String? widgetName, int? eventValue}) {
+  static void trackEvent(
+      String? eventCategory, String eventName, String eventAction,
+      {int? eventValue}) {
     var tracker = MatomoTracker();
     tracker._track(_Event(
       tracker: tracker,
       eventAction: eventAction,
       eventName: eventName,
-      eventCategory: widgetName,
+      eventCategory: eventCategory,
       eventValue: eventValue,
     ));
   }
